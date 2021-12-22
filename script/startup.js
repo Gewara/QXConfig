@@ -5,27 +5,6 @@ let magicJS = MagicJS(scriptName, "INFO");
   let response = null;
   if (magicJS.isResponse) {
     switch (true) {
-      // 嘀嗒出行
-      case /^https?:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          if (obj.hasOwnProperty("startupPages") == true) {
-            obj.show_time = 1;
-            obj.full_screen = 0;
-            let startupPages = [];
-            obj.startupPages.forEach((element) => {
-              element["width"] = 1;
-              element["height"] = 1;
-              element["page_url"] = "#";
-              startupPages.push(element);
-            });
-            obj.startupPages = startupPages;
-            response = { body: JSON.stringify(obj) };
-          }
-        } catch (err) {
-          magicJS.logError(`嘀嗒出行开屏去广告出现异常：${err}`);
-        }
-        break;
       // 美团外卖
       case /^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?/.test(magicJS.request.url):
         try {
@@ -75,32 +54,6 @@ let magicJS = MagicJS(scriptName, "INFO");
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`京东开屏去广告出现异常：${err}`);
-        }
-        break;
-      // 联享家
-      case /^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview.fcg/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.seq = "0";
-          obj.reqinterval = 0;
-          delete obj.last_ads;
-          delete obj.data;
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`联享家开屏去广告出现异常：${err}`);
-        }
-        break;
-      // 多点
-      case /^https?:\/\/cmsapi\.dmall\.com\/app\/home\/homepageStartUpPic/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          for (let i = 0; i < obj["data"]["welcomePage"].length; i++) {
-            obj["data"]["welcomePage"][i]["onlineTime"] = 1915027200000;
-            obj["data"]["welcomePage"][i]["offlineTime"] = 1924272000000;
-          }
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`多点开屏广告处理出现异常：${err}`);
         }
         break;
       default:
