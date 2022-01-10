@@ -3,6 +3,6 @@
   "description":"switch-check-Interaction Script Gallery by AMan",
   "task":[
       "event-interaction https://raw.githubusercontent.com/Gewara/QXConfig/main/script/switch-check/switch-check-nf.js, tag=Netflix 切换, img-url=https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Netflix_Letter.png, enabled=true",
-      "event-interaction https://raw.githubusercontent.com/Gewara/QXConfig/main/script/switch-check/switch-check-ytb.js.js, tag=YouTube 切换, img-url=https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/YouTube_Letter.png, enabled=true"
+      "event-interaction https://raw.githubusercontent.com/Gewara/QXConfig/main/script/switch-check/switch-check-ytb.js, tag=YouTube 切换, img-url=https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/YouTube_Letter.png, enabled=true"
   ]
 }
