@@ -69,7 +69,7 @@ let magicJS = MagicJS(scriptName, "INFO");
       case /^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
-          obj.data.adgroupDataList = [];
+          obj.data.data.adgroupDataList = [];
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`山姆开屏去广告出现异常：${err}`);
