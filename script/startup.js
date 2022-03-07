@@ -79,7 +79,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           // if (magicJS.request.body.adgroupSign == 'initpage') {
           // }
           let obj = JSON.parse(magicJS.response.body);
-          obj.data.data.adgroupDataList = [];
+          obj.data.adgroupDataList = [];
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`山姆开屏去广告出现异常：${err}`);
