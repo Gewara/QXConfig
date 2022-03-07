@@ -66,7 +66,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`知乎开屏去广告出现异常：${err}`);
         }
         break;
-      case /^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
+      case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v1\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.data.adgroupDataList = [];
