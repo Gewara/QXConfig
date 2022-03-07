@@ -68,19 +68,19 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
       // 山姆
       case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v\d+\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
-        magicJS.logWarning(`山姆开屏去广告`);
-        magicJS.logWarning(`山姆-reqest:` + magicJS.request);
-        magicJS.logWarning(`山姆-reqest-url:` + magicJS.request.url);
-        magicJS.logWarning(`山姆-reqest-headers:` + magicJS.request.headers);
-        magicJS.logWarning(`山姆-reqest-opts:` + magicJS.request.opts);
-        magicJS.logWarning(`山姆-reqest-body:` + magicJS.request.body);
+        // magicJS.logWarning(`山姆开屏去广告`);
+        // magicJS.logWarning(`山姆-reqest:` + magicJS.request);
+        // magicJS.logWarning(`山姆-reqest-url:` + magicJS.request.url);
+        // magicJS.logWarning(`山姆-reqest-headers:` + magicJS.request.headers);
+        // magicJS.logWarning(`山姆-reqest-opts:` + magicJS.request.opts);
+        // magicJS.logWarning(`山姆-reqest-body:` + magicJS.request.body);
         try {
           // let requesBody = JSON.parse(magicJS.request.data);
-          if (magicJS.request.body.adgroupSign == 'initpage') {
-            let obj = JSON.parse(magicJS.response.body);
-            obj.data.data.adgroupDataList = [];
-            response = { body: JSON.stringify(obj) };
-          }
+          // if (magicJS.request.body.adgroupSign == 'initpage') {
+          // }
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.data.adgroupDataList = [];
+          response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`山姆开屏去广告出现异常：${err}`);
         }
