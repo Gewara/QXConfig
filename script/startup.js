@@ -69,9 +69,12 @@ let magicJS = MagicJS(scriptName, "INFO");
       // 山姆
       case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v\d+\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
         try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.data.data.adgroupDataList = [];
-          response = { body: JSON.stringify(obj) };
+          let requesBody = JSON.parse(magicJS.request.body);
+          if (requesBody.adgroupSign == 'initpage') {
+            let obj = JSON.parse(magicJS.response.body);
+            obj.data.data.adgroupDataList = [];
+            response = { body: JSON.stringify(obj) };
+          }
         } catch (err) {
           magicJS.logError(`山姆开屏去广告出现异常：${err}`);
         }
