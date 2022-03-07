@@ -80,7 +80,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
     }
   } else {
-    magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
+    magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常：" + magicJS.request.url);
   }
   if (response) {
     magicJS.done(response);
