@@ -71,6 +71,8 @@ let magicJS = MagicJS(scriptName, "INFO");
         magicJS.logWarning(`山姆开屏去广告`);
         magicJS.logWarning(`山姆-reqest:` + magicJS.request);
         magicJS.logWarning(`山姆-reqest-url:` + magicJS.request.url);
+        magicJS.logWarning(`山姆-reqest-headers:` + magicJS.request.headers);
+        magicJS.logWarning(`山姆-reqest-opts:` + magicJS.request.opts);
         magicJS.logWarning(`山姆-reqest-body:` + magicJS.request.body);
         try {
           // let requesBody = JSON.parse(magicJS.request.data);
