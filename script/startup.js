@@ -57,7 +57,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
       // 知乎
-      case /^https?:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v2/.test(magicJS.request.url):
+      case /^https?:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v\d+/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.launch = {};
@@ -66,7 +66,8 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`知乎开屏去广告出现异常：${err}`);
         }
         break;
-      case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v1\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
+      // 山姆
+      case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v\d+\/sams\/channel\/portal\/AdgroupData\/queryAdgroup/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.data.adgroupDataList = [];
