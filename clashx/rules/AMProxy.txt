@@ -1,0 +1,5 @@
+payload:
+  - '+.dlercloud.com'
+  - '+.doubibackup.com'
+  - '+.v2free.org'
+  - '+.pub.dev'
