@@ -2,4 +2,5 @@ payload:
   - '+.dlercloud.com'
   - '+.doubibackup.com'
   - '+.v2free.org'
+  - '+.fastlink.la'
   - '+.pub.dev'
