@@ -4,3 +4,4 @@ payload:
   - '+.v2free.org'
   - '+.fastlink.la'
   - '+.pub.dev'
+  - '+.appstoreconnect.apple.com'
