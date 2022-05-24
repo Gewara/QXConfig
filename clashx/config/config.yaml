@@ -31,11 +31,7 @@ secret: ''
 proxies:
 
 proxy-groups:
-  - { 
-      name: Proxy,
-      type: select,
-      proxies: ["Auto - UrlTest"] 
-    }
+  - {  name: Proxy, type: select, proxies: [] }
   - { name: AdBlock, type: select, proxies: ["REJECT", "Proxy", "DIRECT"] }
   - { name: Speedtest, type: select, proxies: ["Proxy", "DIRECT"] }
   - { name: Apple, type: select, proxies: ["DIRECT", "Proxy"] }
