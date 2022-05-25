@@ -1,0 +1,41 @@
+{
+	"name": "AManIcons",
+	"description": "AMan's icons json file.",
+	"icons": [{
+		"name": "SSID_Alt",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/SSID_Alt.png"
+	}, {
+		"name": "Auto",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Auto.png"
+	}, {
+		"name": "Hong_Kong",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Hong_Kong.png"
+	}, {
+		"name": "Taiwan",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Taiwan.png"
+	}, {
+		"name": "Japan",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Japan.png"
+	}, {
+		"name": "Singapore",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Singapore.png"
+	}, {
+		"name": "United_States",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/United_States.png"
+	}, {
+		"name": "Apple",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Apple.png"
+	}, {
+		"name": "GlobalMedia",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/GlobalMedia.png"
+	}, {
+		"name": "HKMTMedia",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/HKMTMedia.png"
+	}, {
+		"name": "TikTok",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/TikTok.png"
+	}, {
+		"name": "Final",
+		"url": "https://raw.githubusercontent.com/Gewara/Qure/master/IconSet/Final.png"
+	}]
+}
