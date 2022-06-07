@@ -89,7 +89,8 @@ let magicJS = MagicJS(scriptName, "INFO");
       case /^https?:\/\/status\.boohee\.com\/api\/v\d+\/app_square\/start_up_with_ad/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
-          obj.start_up = [];
+          // obj.start_up = [];
+          obj.start_up[0]['is_ad'] = false;
           obj.pop_ads = [];
           obj.video_ads = [];
           response = { body: JSON.stringify(obj) };
