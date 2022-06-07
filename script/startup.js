@@ -90,7 +90,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           // obj.start_up = [];
-          obj.start_up[0]['is_ad'] = false;
+          obj.start_up = [{ "id": 1242, "start_up_url": "", "is_ad": false, "text": "", "link": "", "click_slogan": "", "start_time": "2022-01-01 00:00:00", "end_time": "2099-01-01 00:00:00" }]
           obj.pop_ads = [];
           obj.video_ads = [];
           response = { body: JSON.stringify(obj) };
