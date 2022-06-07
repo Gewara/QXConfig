@@ -56,7 +56,7 @@ proxy-groups:
   - {
       name: Auto - YouTube,
       type: url-test,
-      url: "https://www.youtube.com/",
+      url: "https://www.youtube.com/generate_204",
       interval: 1800,
       proxies: ["广州 -> 香港"]
     }

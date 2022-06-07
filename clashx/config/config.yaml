@@ -48,7 +48,7 @@ proxy-groups:
   - {
       name: Auto - Media,
       type: url-test,
-      url: "https://www.youtube.com/",
+      url: "https://www.youtube.com/generate_204",
       interval: 1800,
       proxies: []
     }

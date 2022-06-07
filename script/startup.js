@@ -76,6 +76,24 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`山姆开屏去广告出现异常：${err}`);
         }
         break;
+      case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/getGrayConfig/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.strategyDetails.discover.isOpen = false;
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`山姆开屏去广告出现异常：${err}`);
+        }
+        break;
+      case /^https?:\/\/api\.boohee\.com\/api\/v1\/sams\/configuration\/portal\/getGrayConfig/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.strategyDetails.discover.isOpen = false;
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`山姆开屏去广告出现异常：${err}`);
+        }
+        break;
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常：" + magicJS.request.url);
         break;
