@@ -10,7 +10,16 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.startpicture = [];
-          obj.data.startpicture = [];
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
+        }
+        break;
+        // 美团外卖
+      case /^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/openscreen?/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.start_picture = "";
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
