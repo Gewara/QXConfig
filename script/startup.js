@@ -20,6 +20,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.start_picture = "";
+          obj.data.setStart_picture = false;
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
