@@ -110,6 +110,14 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
       // 小红书
       case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/cny2022\/pendant\/config/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data = {};
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`小红书【我的-小人物】去广告出现异常：${err}`);
+        }
+        break;
       case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
