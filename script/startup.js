@@ -15,12 +15,22 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
         }
         break;
-        // 美团外卖
+      // 美团外卖
       case /^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/openscreen?/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.start_picture = "";
           obj.data.setStart_picture = false;
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
+        }
+        break;
+      // 美团外卖
+      case /^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/startpicture?/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.start_picture = "{\"ad\":[],\"mk\":[]}";
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
@@ -106,16 +116,6 @@ let magicJS = MagicJS(scriptName, "INFO");
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`);
-        }
-        break;
-      // 小红书
-      case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/cny2022\/pendant\/config/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.data = {};
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`小红书【我的-小人物】去广告出现异常：${err}`);
         }
         break;
       case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
