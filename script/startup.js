@@ -9,7 +9,13 @@ let magicJS = MagicJS(scriptName, "INFO");
       case /^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
-          obj.data.startpicture = [];
+          if (obj.data.startpicture.hasOwnProperty("ad")) {
+            obj.data.startpicture.ad = [];
+          } else if (obj.data.startpicture.hasOwnProperty("mk")) {
+            obj.data.startpicture.mk = [];
+          } else {
+            obj.data.startpicture = [];
+          }
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`美团外卖开屏去广告出现异常：${err}`);
@@ -118,15 +124,15 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`);
         }
         break;
-      case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.data = {};
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`小红书开屏去广告出现异常：${err}`);
-        }
-        break;
+      // case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
+      //   try {
+      //     let obj = JSON.parse(magicJS.response.body);
+      //     obj.data = {};
+      //     response = { body: JSON.stringify(obj) };
+      //   } catch (err) {
+      //     magicJS.logError(`小红书开屏去广告出现异常：${err}`);
+      //   }
+      //   break;
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常：" + magicJS.request.url);
         break;
