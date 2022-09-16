@@ -9,7 +9,8 @@ let magicJS = MagicJS(scriptName, "INFO");
       magicJS.logError(`羊了个羊开始处理数据`);
       // magicJS.logError(`羊了个羊开始处理数据：${obj.data.map_data}`);
       let map_data = JSON.parse(obj.data.map_data);
-      for (let i = 0; i < map_data.levelData.keys().length; i++) {
+      magicJS.logError(`map_data：${map_data}`);
+      for (let i = 0; i < map_data.levelData.length; i++) {
         const key = map_data.levelData.keys()[i];
         let element = map_data.levelData[key];
         // let random = i % 3; //Math.floor(Math.random() * 5);
