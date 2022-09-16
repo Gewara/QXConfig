@@ -6,6 +6,7 @@ let magicJS = MagicJS(scriptName, "INFO");
   if (magicJS.isResponse) {
     try {
       let obj = JSON.parse(magicJS.response.body);
+      magicJS.logError(`羊了个羊开始处理数据：${obj}`);
       let map_data = JSON.parse(obj.data.map_data);
       for (let i = 0; i < map_data.levelData.keys.length; i++) {
         const key = map_data.levelData.keys[i];
@@ -21,11 +22,11 @@ let magicJS = MagicJS(scriptName, "INFO");
       obj.data.map_data = JSON.stringify(map_data);
       response = { body: JSON.stringify(obj) };
 
-      magicJS.logWarning(`羊了个羊脚本map_data：${map_data}`);
-      magicJS.logWarning(`羊了个羊脚本response：${response}`);
+      magicJS.logError(`羊了个羊本map_data：${map_data}`);
+      magicJS.logError(`羊了个羊本response：${response}`);
 
     } catch (err) {
-      magicJS.logError(`羊了个羊脚本出现异常：${err}`);
+      magicJS.logError(`羊了个羊本出现异常：${err}`);
     }
   } else {
     magicJS.logWarning("触发意外的请求处理【Not Respones】：" + magicJS.request.url);
