@@ -6,8 +6,8 @@ let magicJS = MagicJS(scriptName, "INFO");
   if (magicJS.isResponse) {
     try {
       let obj = JSON.parse(magicJS.response.body);
-      magicJS.logError(`羊了个羊开始处理数据：${obj}`);
-      let map_data = JSON.parse(obj.data.map_data.replace('\\"', "\\\\""));
+      magicJS.logError(`羊了个羊开始处理数据：${obj.data.map_data}`);
+      let map_data = JSON.parse(obj.data.map_data.replaceAll('\\"', '\\\\"'));
       for (let i = 0; i < map_data.levelData.keys.length; i++) {
         const key = map_data.levelData.keys[i];
         let element = map_data.levelData[key];
