@@ -22,6 +22,10 @@ let magicJS = MagicJS(scriptName, "INFO");
 
           obj.data.map_data = JSON.stringify(map_data);
           response = { body: JSON.stringify(obj) };
+
+          magicJS.logWarning(`羊了个羊脚本map_data：${map_data}`);
+          magicJS.logWarning(`羊了个羊脚本response：${response}`);
+
         } catch (err) {
           magicJS.logError(`羊了个羊脚本出现异常：${err}`);
         }
