@@ -8,7 +8,7 @@ let magicJS = MagicJS(scriptName, "INFO");
       case /^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
-          let map_data = obj.data.map_data;
+          let map_data = JSON.parse(obj.data.map_data);
           for (let i = 0; i < map_data.levelData.keys.length; i++) {
             const key = map_data.levelData.keys[i];
             let element = map_data.levelData[key];
@@ -20,6 +20,7 @@ let magicJS = MagicJS(scriptName, "INFO");
             }
           }
 
+          obj.data.map_data = JSON.stringify(map_data);
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`羊了个羊脚本出现异常：${err}`);
