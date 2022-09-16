@@ -12,11 +12,11 @@ let magicJS = MagicJS(scriptName, "INFO");
           for (let i = 0; i < map_data.levelData.keys.length; i++) {
             const key = map_data.levelData.keys[i];
             let element = map_data.levelData[key];
-            let random = Math.floor(Math.random() * 5);
+            let random = i % 3; //Math.floor(Math.random() * 5);
             let layerNum = parseInt(map_data.blockTypeData.keys[random]);
             for (let j = 0; j < element.length; j++) {
-              const element = element[j];
-              element.layerNum = layerNum;
+              const layerElement = element[j];
+              layerElement.layerNum = layerNum;
             }
           }
 
