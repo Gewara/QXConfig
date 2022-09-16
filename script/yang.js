@@ -6,10 +6,11 @@ let magicJS = MagicJS(scriptName, "INFO");
   if (magicJS.isResponse) {
     try {
       let obj = JSON.parse(magicJS.response.body);
-      magicJS.logError(`羊了个羊开始处理数据：${obj.data.map_data}`);
+      magicJS.logError(`羊了个羊开始处理数据`);
+      // magicJS.logError(`羊了个羊开始处理数据：${obj.data.map_data}`);
       let map_data = JSON.parse(obj.data.map_data);
-      for (let i = 0; i < map_data.levelData.keys.length; i++) {
-        const key = map_data.levelData.keys[i];
+      for (let i = 0; i < map_data.levelData.keys().length; i++) {
+        const key = map_data.levelData.keys()[i];
         let element = map_data.levelData[key];
         // let random = i % 3; //Math.floor(Math.random() * 5);
         // let layerNum = parseInt(map_data.blockTypeData.keys[random]);
