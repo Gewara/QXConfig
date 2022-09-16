@@ -4,31 +4,29 @@ let magicJS = MagicJS(scriptName, "INFO");
 (() => {
   let response = null;
   if (magicJS.isResponse) {
-      // 京东
-      case /^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          let map_data = JSON.parse(obj.data.map_data);
-          for (let i = 0; i < map_data.levelData.keys.length; i++) {
-            const key = map_data.levelData.keys[i];
-            let element = map_data.levelData[key];
-            let random = i % 3; //Math.floor(Math.random() * 5);
-            let layerNum = parseInt(map_data.blockTypeData.keys[random]);
-            for (let j = 0; j < element.length; j++) {
-              const layerElement = element[j];
-              layerElement.layerNum = layerNum;
-            }
-          }
-
-          obj.data.map_data = JSON.stringify(map_data);
-          response = { body: JSON.stringify(obj) };
-
-          magicJS.logWarning(`羊了个羊脚本map_data：${map_data}`);
-          magicJS.logWarning(`羊了个羊脚本response：${response}`);
-
-        } catch (err) {
-          magicJS.logError(`羊了个羊脚本出现异常：${err}`);
+    try {
+      let obj = JSON.parse(magicJS.response.body);
+      let map_data = JSON.parse(obj.data.map_data);
+      for (let i = 0; i < map_data.levelData.keys.length; i++) {
+        const key = map_data.levelData.keys[i];
+        let element = map_data.levelData[key];
+        let random = i % 3; //Math.floor(Math.random() * 5);
+        let layerNum = parseInt(map_data.blockTypeData.keys[random]);
+        for (let j = 0; j < element.length; j++) {
+          const layerElement = element[j];
+          layerElement.layerNum = layerNum;
         }
+      }
+
+      obj.data.map_data = JSON.stringify(map_data);
+      response = { body: JSON.stringify(obj) };
+
+      magicJS.logWarning(`羊了个羊脚本map_data：${map_data}`);
+      magicJS.logWarning(`羊了个羊脚本response：${response}`);
+
+    } catch (err) {
+      magicJS.logError(`羊了个羊脚本出现异常：${err}`);
+    }
   } else {
     magicJS.logWarning("触发意外的请求处理【Not Respones】：" + magicJS.request.url);
   }
