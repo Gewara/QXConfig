@@ -87,6 +87,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.launch = {};
+          obj.launch = "{\"ads\":[],\"mobile_experiment\":{\"ad_alibc_sdk\":\"1\",\"ad_dw_notify\":\"0\",\"ad_jump_toast\":\"0\",\"ad_mul_preload\":\"1\",\"ad_privacy\":\"1\",\"ad_rmcode\":\"1\",\"ad_webp\":\"1\",\"back_plugin\":\"1\",\"h5canvas_load\":\"2\",\"mark_plugin\":\"1\",\"morph_plus\":\"1\",\"outside_banner\":\"1\",\"pause_plugin\":\"1\",\"toast_off_ios\":\"1\"}}";
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`知乎开屏去广告出现异常：${err}`);
