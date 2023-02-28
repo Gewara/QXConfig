@@ -7,3 +7,4 @@ payload:
   - '+.appstoreconnect.apple.com'
   - '+.gradle.org'
   - 'jcenter.bintray.com'
+  - '+.fastlane.tools'
