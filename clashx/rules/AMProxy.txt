@@ -5,3 +5,5 @@ payload:
   - '+.fastlink.la'
   - '+.pub.dev'
   - '+.appstoreconnect.apple.com'
+  - '+.gradle.org'
+  - 'jcenter.bintray.com'
