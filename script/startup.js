@@ -126,6 +126,17 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`);
         }
         break;
+      // keep
+      case /^https?:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d+\/ad/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.data.hasAd = 0;
+          obj.data.creative = {};
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`);
+        }
+        break;
       // case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
       //   try {
       //     let obj = JSON.parse(magicJS.response.body);
