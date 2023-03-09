@@ -134,7 +134,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           obj.data.creative = {};
           response = { body: JSON.stringify(obj) };
         } catch (err) {
-          magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`);
+          magicJS.logError(`keep开屏去广告出现异常：${err}`);
         }
         break;
       // case /^https?:\d+\.\d+\.\d+\/api\/sns\/v\d+\/system_service\/splash_config/.test(magicJS.request.url):
