@@ -8,3 +8,7 @@ payload:
   - '+.gradle.org'
   - 'jcenter.bintray.com'
   - '+.fastlane.tools'
+  - '+.npmjs.com'
+  - '+.bintray.com'
+  - '+.maven.org'
+  - 'services.gradle.org'
