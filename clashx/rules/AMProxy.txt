@@ -11,4 +11,6 @@ payload:
   - '+.npmjs.com'
   - '+.bintray.com'
   - '+.maven.org'
+  - 'dl.google.com'
+  - 'repo.maven.apache.org'
   - 'services.gradle.org'
