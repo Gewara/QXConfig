@@ -8,8 +8,6 @@
 > 脚本说明：目前脚本是最简洁也是最完美的了（低调使用），Enjoy！
 > 使用说明：请在本地添加分流 host, ad.12306.cn, direct
 
-***********************************************/
-
 [rewrite_local]
 
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/Gewara/QXConfig/main/script/ad/12306.js
@@ -17,6 +15,8 @@
 [mitm]
 
 hostname = ad.12306.cn
+
+***********************************************/
 
 const version = 'V1.0.22'
 
