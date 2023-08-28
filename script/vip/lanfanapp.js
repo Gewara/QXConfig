@@ -13,6 +13,7 @@ let magicJS = MagicJS(scriptName, "INFO");
             obj.content.user.is_prime = true;
           }
           response = { body: JSON.stringify(obj) };
+          magicJS.logInfo(`懒饭VIP解锁：${obj}`);
         } catch (err) {
           magicJS.logError(`懒饭VIP解锁出现异常：${err}`);
         }
@@ -25,6 +26,7 @@ let magicJS = MagicJS(scriptName, "INFO");
             obj.content.user.is_prime = true;
           }
           response = { body: JSON.stringify(obj) };
+          magicJS.logInfo(`懒饭VIP解锁：${obj}`);
         } catch (err) {
           magicJS.logError(`懒饭VIP解锁出现异常：${err}`);
         }
@@ -39,6 +41,7 @@ let magicJS = MagicJS(scriptName, "INFO");
             obj.content.user.prime.expires_time = "2025-01-01 00:00:00",
           }
           response = { body: JSON.stringify(obj) };
+          magicJS.logInfo(`懒饭VIP解锁：${obj}`);
         } catch (err) {
           magicJS.logError(`懒饭VIP解锁出现异常：${err}`);
         }
