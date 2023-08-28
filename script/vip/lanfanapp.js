@@ -6,7 +6,7 @@ let magicJS = MagicJS(scriptName, "INFO");
   if (magicJS.isResponse) {
     switch (true) {
       // 懒饭VIP
-      case /^https:\/\/lanfanapp\.com\/api\/v\d+\/account\/login_via_apple\.json/.test(magicJS.request.url):
+      case /^https:\/\/lanfanapp\.com\/api\/v1\/account\/login_via_apple\.json/.test(magicJS.request.url):
         try {
           magicJS.logWarning("懒饭VIP解锁：" + magicJS.request.url);
           let obj = JSON.parse(magicJS.response.body);
@@ -22,7 +22,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
       // 懒饭VIP
-      case /^https:\/\/lanfanapp\.com\/api\/v\d+\/user\/page_detail\.json/.test(magicJS.request.url):
+      case /^https:\/\/lanfanapp\.com\/api\/v1\/user\/page_detail\.json/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           // if (obj.content.hasOwnProperty("user")) {
@@ -36,7 +36,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
       // 懒饭VIP
-      case /^https:\/\/lanfanapp\.com\/api\/v\d+\/user\/prime\.json/.test(magicJS.request.url):
+      case /^https:\/\/lanfanapp\.com\/api\/v1\/user\/prime\.json/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
           // if (obj.content.hasOwnProperty("user")) {
