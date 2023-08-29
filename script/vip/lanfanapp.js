@@ -7,13 +7,25 @@ let magicJS = MagicJS(scriptName, "INFO");
     switch (true) {
       // 懒饭VIP
       case /^https:\/\/lanfanapp\.com\/api\/v\d+\/account\/login_via_apple\.json/.test(magicJS.request.url):
+        try {
+          magicJS.logWarning("懒饭VIP解锁：" + magicJS.request.url);
+          let obj = JSON.parse(magicJS.response.body);
+          if (obj.content.hasOwnProperty("user")) {
+            obj.content.user.is_prime = true;
+            obj.content.user.name = '巴拉巴拉login_phone';
+          }
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`懒饭VIP解锁出现异常：${err}`);
+        }
+        break;
       case /^https:\/\/lanfanapp\.com\/api\/v\d+\/account\/login_via_phone\.json/.test(magicJS.request.url):
         try {
           magicJS.logWarning("懒饭VIP解锁：" + magicJS.request.url);
           let obj = JSON.parse(magicJS.response.body);
           if (obj.content.hasOwnProperty("user")) {
             obj.content.user.is_prime = true;
-            obj.content.user.name = '巴拉巴拉login';
+            obj.content.user.name = '巴拉巴拉login_apple';
           }
           response = { body: JSON.stringify(obj) };
         } catch (err) {
