@@ -12,7 +12,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           let obj = JSON.parse(magicJS.response.body);
           if (obj.content.hasOwnProperty("user")) {
             obj.content.user.is_prime = true;
-            obj.content.user.name = '巴拉巴拉login_phone';
+            obj.content.user.name = '巴拉巴拉login_apple';
           }
           response = { body: JSON.stringify(obj) };
         } catch (err) {
@@ -25,7 +25,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           let obj = JSON.parse(magicJS.response.body);
           if (obj.content.hasOwnProperty("user")) {
             obj.content.user.is_prime = true;
-            obj.content.user.name = '巴拉巴拉login_apple';
+            obj.content.user.name = '巴拉巴拉login_phone';
           }
           response = { body: JSON.stringify(obj) };
         } catch (err) {
