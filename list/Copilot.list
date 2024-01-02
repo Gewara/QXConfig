@@ -1,7 +1,12 @@
 # Copilot分流规则
-DOMAIN-SUFFIX,location.microsoft.com
-DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,cn.bing.com
-DOMAIN-SUFFIX,gateway.bingviz.microsoftapp.net
-DOMAIN-SUFFIX,sapphire.api.microsoftapp.net
-DOMAIN-SUFFIX,ssl.bing.com
+# DOMAIN-SUFFIX,location.microsoft.com
+# DOMAIN-SUFFIX,bing.com
+# DOMAIN-SUFFIX,cn.bing.com
+# DOMAIN-SUFFIX,gateway.bingviz.microsoftapp.net
+# DOMAIN-SUFFIX,sapphire.api.microsoftapp.net
+# DOMAIN-SUFFIX,ssl.bing.com
+# DOMAIN-SUFFIX,sapphire.api.microsoftapp.net
+# DOMAIN-SUFFIX,dealczars.bing-shopping.microsoft-falcon.io
+# DOMAIN-SUFFIX,self.events.data.microsoft.com
+# DOMAIN-SUFFIX,shopping.bing-shopping.microsoft-falcon.io
+# DOMAIN-SUFFIX,api.msn.com·
