@@ -1,4 +1,4 @@
 # Copilot分流规则
-HOST-SUFFIX,location.microsoft.com
-HOST-SUFFIX,bing.com
-HOST-SUFFIX,cn.bing.com
+DOMAIN,location.microsoft.com
+DOMAIN,bing.com
+DOMAIN,cn.bing.com
