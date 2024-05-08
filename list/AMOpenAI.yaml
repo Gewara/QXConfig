@@ -1,5 +1,6 @@
 payload:
   - DOMAIN,ai.cn
+  - DOMAIN,chatgpt.com
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,challenges.cloudflare.com
@@ -11,10 +12,9 @@ payload:
   - DOMAIN-SUFFIX,intercomcdn.com
   - DOMAIN-SUFFIX,poe.com
   - DOMAIN-SUFFIX,sentry.io
-  - DOMAIN-SUFFIX,stripe.com
   - DOMAIN-SUFFIX,oaistatic.com
   - DOMAIN-SUFFIX,oaiusercontent.com
   - DOMAIN-KEYWORD,openai
   - # Add stripe.com
-  - DOMAIN-SUFFIX,invoice.stripe.com
   - DOMAIN-SUFFIX,stripe.com
+  - DOMAIN-SUFFIX,invoice.stripe.com
