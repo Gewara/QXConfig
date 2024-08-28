@@ -109,17 +109,6 @@ let magicJS = MagicJS(scriptName, 'INFO')
           magicJS.logError(`山姆开屏去广告出现异常：${err}`)
         }
         break
-      case /^https?:\/\/api\-sams\.walmartmobile\.cn\/api\/v\d+\/sams\/configuration\/portal\/getGrayConfig/.test(
-        magicJS.request.url
-      ):
-        try {
-          let obj = JSON.parse(magicJS.response.body)
-          obj.data.strategyDetails.discover.isOpen = false
-          response = { body: JSON.stringify(obj) }
-        } catch (err) {
-          magicJS.logError(`山姆去除【发现】出现异常：${err}`)
-        }
-        break
       // 薄荷健康
       case /^https?:\/\/status\.boohee\.com\/api\/v\d+\/app_square\/start_up_with_ad/.test(magicJS.request.url):
         try {
@@ -144,17 +133,6 @@ let magicJS = MagicJS(scriptName, 'INFO')
           magicJS.logError(`薄荷健康开屏去广告出现异常：${err}`)
         }
         break
-      // keep
-      case /^https?:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d+\/ad/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body)
-          obj.data.hasAd = 0
-          obj.data.creative = {}
-          response = { body: JSON.stringify(obj) }
-        } catch (err) {
-          magicJS.logError(`keep开屏去广告出现异常：${err}`)
-        }
-        break
       // 雪球（xueqiu）
       case /^https?:\/\/.+?\/snowpard\/launch_strategy\/query\.json/.test(magicJS.request.url):
         try {
@@ -162,7 +140,32 @@ let magicJS = MagicJS(scriptName, 'INFO')
           obj.data = []
           response = { body: JSON.stringify(obj) }
         } catch (err) {
-          magicJS.logError(`keep开屏去广告出现异常：${err}`)
+          magicJS.logError(`雪球（xiuqiu）开屏去广告出现异常：${err}`)
+        }
+        break
+      // 盒马
+      case /^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body)
+          // 开屏广告数据
+          if (obj.data.pageType == '70') {
+            obj.data.scenes = []
+          }
+          response = { body: JSON.stringify(obj) }
+        } catch (err) {
+          magicJS.logError(`盒马APP开屏去广告出现异常：${err}`)
+        }
+        break
+      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body)
+          // 开屏广告数据
+          if (obj.data.pageType == '70') {
+            obj.data.scenes = []
+          }
+          response = { body: JSON.stringify(obj) }
+        } catch (err) {
+          magicJS.logError(`盒马APP开屏去广告出现异常：${err}`)
         }
         break
       default:
