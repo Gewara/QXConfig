@@ -6,7 +6,9 @@ let magicJS = MagicJS(scriptName, 'INFO')
   if (magicJS.isResponse) {
     switch (true) {
       // 盒马 启动广告
-      case /^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(magicJS.request.url):
+      case /^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
         try {
           let obj = JSON.parse(magicJS.response.body)
           // 开屏广告数据
@@ -18,7 +20,9 @@ let magicJS = MagicJS(scriptName, 'INFO')
           magicJS.logError(`盒马APP开屏去广告出现异常：${err}`)
         }
         break
-      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(magicJS.request.url):
+      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
         try {
           let obj = JSON.parse(magicJS.response.body)
           // 开屏广告数据
@@ -31,8 +35,9 @@ let magicJS = MagicJS(scriptName, 'INFO')
         }
         break
       // 盒马Tabbar 优化
-      case /^^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(magicJS.request.url):
-      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(magicJS.request.url):
+      case /^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
         try {
           let obj = JSON.parse(magicJS.response.body)
           // tabbar 只保留 首页/分类/购物车/我的
@@ -59,8 +64,67 @@ let magicJS = MagicJS(scriptName, 'INFO')
           magicJS.logError(`盒马APPTabbar优化出现异常：${err}`)
         }
         break
-      case /^^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(magicJS.request.url):
-      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(magicJS.request.url):
+      case /^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
+        try {
+          let obj = JSON.parse(magicJS.response.body)
+          // tabbar 只保留 首页/分类/购物车/我的
+          for (const item in obj.data.groupList) {
+            item.ext.tabConfig.elderTabList = item.ext.tabConfig.elderTabList.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.elderTabListB = item.ext.tabConfig.elderTabListB.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.normalTabList = item.ext.tabConfig.normalTabList.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.normalTabListB = item.ext.tabConfig.normalTabListB.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+          }
+          response = { body: JSON.stringify(obj) }
+        } catch (err) {
+          magicJS.logError(`盒马APPTabbar优化出现异常：${err}`)
+        }
+        break
+      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
+        try {
+          let obj = JSON.parse(magicJS.response.body)
+          // tabbar 只保留 首页/分类/购物车/我的
+          for (const item in obj.data.groupList) {
+            item.ext.tabConfig.elderTabList = item.ext.tabConfig.elderTabList.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.elderTabListB = item.ext.tabConfig.elderTabListB.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.normalTabList = item.ext.tabConfig.normalTabList.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+            item.ext.tabConfig.normalTabListB = item.ext.tabConfig.normalTabListB.filter(
+              (tabItem) =>
+                tabItem.code == 'HOME' || tabItem.code == 'CLASSIFY' || tabItem.code == 'CART' || tabItem.code == 'MY'
+            )
+          }
+          response = { body: JSON.stringify(obj) }
+        } catch (err) {
+          magicJS.logError(`盒马APPTabbar优化出现异常：${err}`)
+        }
+        break
+      case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(
+        magicJS.request.url
+      ):
         try {
           let obj = JSON.parse(magicJS.response.body)
           // tabbar 只保留 首页/分类/购物车/我的
