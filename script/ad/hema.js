@@ -31,6 +31,7 @@ let magicJS = MagicJS(scriptName, 'INFO')
         }
         break
       // 盒马Tabbar 优化
+      case /^^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(magicJS.request.url):
       case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decideformain\/\d+\.\d+/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body)
@@ -58,6 +59,7 @@ let magicJS = MagicJS(scriptName, 'INFO')
           magicJS.logError(`盒马APPTabbar优化出现异常：${err}`)
         }
         break
+      case /^^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(magicJS.request.url):
       case /^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.lbs\.location\.shopdecideapi\.decidebyaddressid\/\d+\.\d+/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body)
