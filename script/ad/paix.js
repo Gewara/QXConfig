@@ -63,7 +63,7 @@ hostname = stat.51hchc.com
       // 移除礼品卡 tabbar
       if (dataObj.BASIC.menuIcon && Array.isArray(dataObj.BASIC.menuIcon.menuList)) {
         dataObj.BASIC.menuIcon.menuList = dataObj.BASIC.menuIcon.menuList.filter(
-          (item) => item.iconName !== 'public-giftcard'
+          (item) => item.iconName !== 'public-cup'
         )
       }
 
