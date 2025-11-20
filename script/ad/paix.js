@@ -16,7 +16,7 @@ hostname = stat.51hchc.com
 *****************************/
 
 var obj = JSON.parse($request.body),
-const INDEXTOPPOPUP = obj.INDEXTOPPOPUP || [];
+const INDEXTOPPOPUP = obj.data.INDEXTOPPOPUP || [];
 
 INDEXTOPPOPUP.forEach(item => {
   item.enabled = false;
