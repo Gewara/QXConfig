@@ -69,7 +69,7 @@ hostname = stat.51hchc.com
         })
       }
 
-      if (data.OTHER && typeof data.OTHER === 'object') {
+      if (dataObj.OTHER && typeof dataObj.OTHER === 'object') {
         dataObj.OTHER.indexLanding = { isOpenLoadingImg: false, landingImg: '' }
         // dataObj.OTHER.indexLoading = { isOpenlandingImg: false, loadingImg: '' }
       }
