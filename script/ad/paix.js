@@ -58,7 +58,7 @@ hostname = stat.51hchc.com
     if (dataObj.BASIC && typeof dataObj.BASIC === 'object') {
       // 关闭启动页图片
       if ('isOpenlandingImg' in dataObj.BASIC) dataObj.BASIC.isOpenlandingImg = false
-      if ('isOpenLoadingImg' in dataObj.BASIC) dataObj.BASIC.isOpenLoadingImg = false
+      // if ('isOpenLoadingImg' in dataObj.BASIC) dataObj.BASIC.isOpenLoadingImg = false
 
       // 移除礼品卡 tabbar
       if (dataObj.BASIC.menuIcon && Array.isArray(dataObj.BASIC.menuIcon.menuList)) {
@@ -69,7 +69,7 @@ hostname = stat.51hchc.com
 
       if (dataObj.OTHER && typeof dataObj.OTHER === 'object') {
         dataObj.OTHER.indexLanding = { isOpenLoadingImg: false, landingImg: '' }
-        dataObj.OTHER.indexLoading = { isOpenlandingImg: false, loadingImg: '' }
+        // dataObj.OTHER.indexLoading = { isOpenlandingImg: false, loadingImg: '' }
       }
     }
 
