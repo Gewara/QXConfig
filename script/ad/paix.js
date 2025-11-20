@@ -39,21 +39,10 @@ hostname = stat.51hchc.com
     });
     dataObj.INDEXTOPPOPUP = popups;
 
-    // 2) Disable floating widget if exists
-    // if (dataObj.INDEXFLOAT && typeof dataObj.INDEXFLOAT === 'object') {
-    //   dataObj.INDEXFLOAT.enabled = false;
-    // }
-
-    // 3) Disable homepage carousel images if exist
-    // if (
-    //   dataObj.HOMEPAGE &&
-    //   dataObj.HOMEPAGE.topImage &&
-    //   Array.isArray(dataObj.HOMEPAGE.topImage.imgList)
-    // ) {
-    //   dataObj.HOMEPAGE.topImage.imgList.forEach(img => {
-    //     if (img && typeof img === 'object') img.enabled = false;
-    //   });
-    // }
+    // 首页悬浮广告
+    if (dataObj.INDEXFLOAT && typeof dataObj.INDEXFLOAT === 'object') {
+      dataObj.INDEXFLOAT.enabled = false;
+    }
 
     if (dataObj.BASIC && typeof dataObj.BASIC === 'object') {
       // 关闭启动页图片
