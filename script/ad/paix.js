@@ -20,7 +20,6 @@ hostname = stat.51hchc.com
     const raw = ($response && $response.body) || ($request && $request.body) || '';
     const outer = JSON.parse(raw || '{}');
 
-    // data may be a JSON string or object per template
     let dataObj;
     if (typeof outer.data === 'string') {
       try {
@@ -34,7 +33,6 @@ hostname = stat.51hchc.com
       dataObj = {};
     }
 
-    // 1) Disable home page top popups
     const popups = Array.isArray(dataObj.INDEXTOPPOPUP) ? dataObj.INDEXTOPPOPUP : [];
     popups.forEach(it => {
       if (it && typeof it === 'object') it.enabled = false;
@@ -42,27 +40,41 @@ hostname = stat.51hchc.com
     dataObj.INDEXTOPPOPUP = popups;
 
     // 2) Disable floating widget if exists
-    if (dataObj.INDEXFLOAT && typeof dataObj.INDEXFLOAT === 'object') {
-      dataObj.INDEXFLOAT.enabled = false;
-    }
+    // if (dataObj.INDEXFLOAT && typeof dataObj.INDEXFLOAT === 'object') {
+    //   dataObj.INDEXFLOAT.enabled = false;
+    // }
 
     // 3) Disable homepage carousel images if exist
-    if (
-      dataObj.HOMEPAGE &&
-      dataObj.HOMEPAGE.topImage &&
-      Array.isArray(dataObj.HOMEPAGE.topImage.imgList)
-    ) {
-      dataObj.HOMEPAGE.topImage.imgList.forEach(img => {
-        if (img && typeof img === 'object') img.enabled = false;
-      });
+    // if (
+    //   dataObj.HOMEPAGE &&
+    //   dataObj.HOMEPAGE.topImage &&
+    //   Array.isArray(dataObj.HOMEPAGE.topImage.imgList)
+    // ) {
+    //   dataObj.HOMEPAGE.topImage.imgList.forEach(img => {
+    //     if (img && typeof img === 'object') img.enabled = false;
+    //   });
+    // }
+
+    if (dataObj.BASIC && typeof dataObj.BASIC === 'object') {
+      // 关闭启动页和落地页图片 
+      if ('isOpenLoadingImg' in dataObj.BASIC) dataObj.BASIC.isOpenLoadingImg = false
+      // if ('isOpenlandingImg' in dataObj.BASIC) dataObj.BASIC.isOpenlandingImg = false
+
+      // 移除礼品卡 tabbar
+      if (Array.isArray(dataObj.BASIC.menuIcon)) {
+        dataObj.BASIC.menuIcon.forEach((icon) => {
+          if (icon.menuList && Array.isArray(icon.menuList)) {
+            icon.menuList = icon.menuList.filter((item) => item.iconName !== 'public-cup')
+          }
+        })
+      }
+
+      if (data.OTHER && typeof data.OTHER === 'object') {
+        dataObj.OTHER.indexLanding = { isOpenLoadingImg: false, landingImg: '' }
+        // dataObj.OTHER.indexLoading = { isOpenlandingImg: false, loadingImg: '' }
+      }
     }
 
-    // 4) Turn off landing/loading pop images if present
-    if ('isOpenLoadingImg' in dataObj) dataObj.isOpenLoadingImg = false;
-    if ('isOpenlandingImg' in dataObj) dataObj.isOpenlandingImg = false;
-    if ('IsPopUpWxPosition' in dataObj) dataObj.IsPopUpWxPosition = false;
-
-    // Repack per template: outer.data must be a JSON string
     outer.data = JSON.stringify(dataObj);
     $done({ body: JSON.stringify(outer) });
   } catch (e) {
