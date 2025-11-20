@@ -66,6 +66,6 @@ hostname = stat.51hchc.com
     outer.data = JSON.stringify(dataObj);
     $done({ body: JSON.stringify(outer) });
   } catch (e) {
-    $done({ body: JSON.parse($request.body) })
+    $done({ body: $request.body })
   }
 })();
