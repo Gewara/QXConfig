@@ -1,6 +1,6 @@
 # NAME: Ai Rules
 # AUTHOR: https://t.me/ddgksf2021
-# UPDATED: 2025-11-26
+# UPDATED: 2026-1-28
 
 # > Ai general rules
 DOMAIN,api.statsig.com
@@ -57,6 +57,10 @@ DOMAIN-SUFFIX,grazie.ai
 # > Meta
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,meta.com
+
+# > Notebooklm
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,notebooklm.google
 
 # > Microsoft Copilot
 DOMAIN,api.msn.com
