@@ -1,0 +1,132 @@
+# NAME: Ai Rules
+# UPDATED: 2026-4-14
+
+# ================================
+# > AI General (基础依赖)
+# ================================
+DOMAIN,api.statsig.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,static.cloudflareinsights.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com
+
+# ================================
+# > Anthropic / Claude
+# ================================
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,cdn.usefathom.com
+
+# ================================
+# > OpenAI / ChatGPT
+# ================================
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN,openaiapi-site.azureedge.net
+
+# ================================
+# > Google AI (Gemini / NotebookLM)
+# ================================
+DOMAIN,ai.google.dev
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,labs.google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,clients6.google.com
+DOMAIN-SUFFIX,clients4.google.com
+DOMAIN-SUFFIX,deepmid.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,colab.google.com
+DOMAIN-SUFFIX,colab.research.google.com
+DOMAIN-SUFFIX,developerprofiles.google.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+
+# ================================
+# > Microsoft Copilot
+# ================================
+DOMAIN,copilot.microsoft.com
+DOMAIN,sydney.bing.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,api.githubcopilot.com
+
+# ================================
+# > xAI / Grok
+# ================================
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
+
+# ================================
+# > Perplexity
+# ================================
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,perplexity.com
+DOMAIN-SUFFIX,pplx.ai
+
+# ================================
+# > HuggingFace / 开源AI
+# ================================
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+
+# ================================
+# > 其他 AI 服务（来自 ai.mrs 补充）
+# ================================
+DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,groq.com
+DOMAIN,api.groq.com
+DOMAIN,api.together.xyz
+
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
+
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursorapi.com
+
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabs.com
+
+DOMAIN-SUFFIX,dify.ai
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,midjourney.com
+
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,notebooklm.google
+
+# ================================
+# > Keyword（兜底）
+# ================================
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,gemini
+DOMAIN-KEYWORD,copilot
+DOMAIN-KEYWORD,perplexity
