@@ -41,6 +41,8 @@ DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,revenuecat.com
 
 # ================================
 # > Google AI (Gemini / NotebookLM)
